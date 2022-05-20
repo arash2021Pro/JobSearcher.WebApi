@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PBoEkFoCFS0yRcMtlZnn9VRvtB5lOfmt4O7iSo4KxTRl4sByj4z6avopJHn1ws4FVSoXnQH2Y9+17BYv+igX1w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\admin\\RiderProjects\\JobSearcher\\JobSearcher.CoreStructure\\JobSearcher.CoreStructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\kavenegar.netcore\\1.0.0\\kavenegar.netcore.1.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

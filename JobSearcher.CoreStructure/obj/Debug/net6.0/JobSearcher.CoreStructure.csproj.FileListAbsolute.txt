@@ -1,0 +1,16 @@
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\JobSearcher.CoreStructure.deps.json
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\JobSearcher.CoreStructure.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\JobSearcher.CoreStructure.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.csproj.CopyComplete
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\refint\JobSearcher.CoreStructure.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\JobSearcher.CoreStructure.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStructure\obj\Debug\net6.0\ref\JobSearcher.CoreStructure.dll

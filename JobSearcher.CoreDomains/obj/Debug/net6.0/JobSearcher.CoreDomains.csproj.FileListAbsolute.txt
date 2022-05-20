@@ -1,0 +1,12 @@
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\bin\Debug\net6.0\JobSearcher.CoreDomains.deps.json
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\bin\Debug\net6.0\JobSearcher.CoreDomains.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\bin\Debug\net6.0\JobSearcher.CoreDomains.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\refint\JobSearcher.CoreDomains.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\JobSearcher.CoreDomains.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreDomains\obj\Debug\net6.0\ref\JobSearcher.CoreDomains.dll

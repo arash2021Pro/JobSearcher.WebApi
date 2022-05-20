@@ -1,0 +1,17 @@
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreStorage.deps.json
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreStorage.runtimeconfig.json
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreStorage.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreStorage.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreDomains.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\bin\Debug\net6.0\JobSearcher.CoreDomains.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.csproj.CopyComplete
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\refint\JobSearcher.CoreStorage.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\JobSearcher.CoreStorage.genruntimeconfig.cache
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher.CoreStorage\obj\Debug\net6.0\ref\JobSearcher.CoreStorage.dll
