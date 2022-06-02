@@ -103,3 +103,6 @@ C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\JobSearche
 C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\Kavenegar.NetCore.dll
 C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\JobSearcher.CoreStructure.dll
 C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\JobSearcher.CoreStructure.pdb
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\MediatR.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\admin\RiderProjects\JobSearcher\JobSearcher\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

@@ -2,7 +2,7 @@
 
 namespace JobSearcher.CoreDomains.ReposistoryPattern;
 
-public interface IUnitOfWork
+public interface IUnitOfWork:IAsyncDisposable
 {
     DbSet<TEntity> Set<TEntity>() where TEntity:class;
     int SaveChanges();

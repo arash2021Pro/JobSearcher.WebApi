@@ -9,7 +9,13 @@ using JobSearcher.CoreDomains.StorageDomains.Otp;
 using JobSearcher.CoreDomains.StorageDomains.SafetyPermissions;
 using JobSearcher.CoreStorage.Migrations;
 using JobSearcher.CoreStructure;
+using JobSearcher.CqrsOperations.Users;
+using JobSearcher.CqrsOperations.Users.ForgotPassword;
+using JobSearcher.CqrsOperations.Users.GetUserThroughParam;
+using JobSearcher.CqrsOperations.Users.OptVerification;
+using JobSearcher.CqrsOperations.Users.SetNewPassowrd;
 using MapsterMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -27,152 +33,73 @@ public class UserController:ControllerBase
     public IOtpService OtpService;
     public IMapper Mapper;
     public IMessageService MessageService;
-    public UserController(IUserService userService, IUnitOfWork work, IAccessPermission accessPermission, IOtpService otpService, IMapper mapper)
+    public ISender _mediator;
+    public UserController(IUserService userService, IUnitOfWork work, IAccessPermission accessPermission, IOtpService otpService, IMapper mapper, ISender sender, ISender mediator)
     {
         UserService = userService;
         Work = work;
         AccessPermission = accessPermission;
         OtpService = otpService;
         Mapper = mapper;
+        _mediator = mediator;
     }
-    
+        
     [HttpPost("Phonenumber,Password")]
     public async Task<JsonResult> Signup([FromBody] UserSignupModel? model)
     {
-        var result = await UserService.IsContainsUserAsync(model.Phonenumber);
-        var user = await UserService.GetUserAsync(model.Phonenumber);
-        if(result && user.UserStatus != UserStatus.None) 
-        {
-            var alarm = new Alarm() {IsCompleted = false, Message ="این کاربر قبلا صبت نام کرده" , status = 201}; 
-            var json = new JsonResult(alarm);
-            return json;
-        }
-        var code = OtpService.GenerateOtpCodeAsync(6);
-        var otp = new OTP();
-        otp.code = code;
-        if (user == null)
-        {
-            user = new User();
-            var roleId =  AccessPermission.SearchRoleIdAsync(model.Rolename);
-            user.RoleId = roleId ;
-            user.UserStatus = UserStatus.None;
-            Mapper.Map(model, user);
-            await UserService.InsertUserAsync(user);
-        }
-        otp.User = user;
-        await OtpService.InsertOtpAsync(otp);
-        var row = await Work.SaveChangesAsync();
-        if (row > 0)
-        {
-            //BackgroundJob.Enqueue(() => SendMessage("JobSearcher Group",model.Phonenumber,code));
-            return await DisplayPhone(model.Phonenumber);
-        }
-        var alert = new Alarm() {Message = "خطا در پاسخگویی", IsCompleted = false, status = 500};
-        var Json = new JsonResult(alert);
-        return Json;
+        var json = await _mediator.Send(new SignupQuery() {Model = model});
+        return json;
     }
     
-    [HttpGet("phonenumber")]
-    public async Task<JsonResult> DisplayPhone(string?phonenumber)
-    {
-        var phone = new JsonResult(phonenumber);
-        return phone;
-    }
-
     [HttpPost("code")]
     public async Task<JsonResult> Verify( [FromBody]string code)
     {
-        var otp = await OtpService.GetOtpAsync(code);
-        var user = await UserService.GetUserAsync(otp.userId);
-        if (otp.IsAuthentic)
-        {
-            user.UserStatus = UserStatus.Active;
-            otp.IsUsed = true;
-            var row = await Work.SaveChangesAsync();
-            if (row > 0)
-            {
-                var alarm = new VerifyAlarmModel() {Message = "حساب شما با موفقیت وریفای شد", IsCompleted = true, Status = 200};
-                return new JsonResult(alarm);
-            }
-            var alert= new VerifyAlarmModel() {Message = "خطا در سرور", IsCompleted = true, Status = 200};
-            return new JsonResult(alert);
-        }
-        var message = new VerifyAlarmModel() {Message = "کد وارد شده اعتبار ندارد", IsCompleted = true, Status = 200};
-        return new JsonResult(message);
+        var json = await _mediator.Send(new VerifyQuery() {code = code});
+        return json;
     }
-
+    
     [HttpPost("Phonenumber")]
     public async Task<JsonResult> fotgetPassword([FromBody]string Phonenumber)
     {
-        var user = await UserService.GetUserAsync(Phonenumber);
-        if (user == null)
-        {
-            return null;
-        }
-        var code = OtpService.GenerateOtpCodeAsync(5);
-        var otp = new OTP();
-        otp.userId = user.id;
-        otp.code = code;
-        await OtpService.InsertOtpAsync(otp);
-        var row = await Work.SaveChangesAsync();
-        if (row > 0)
-        {
-            // BackgroundJob.Enqueue(() => MessageService.SendMessage("JobSearcher", Phonenumber, code));
-            var alert = new ForgetPassModel()
-                {Message = "کد تایید برای شما مسیج شد ", IsCompleted = true, Status = 200};
-            return new JsonResult(alert);
-        }
-        var json = new ForgetPassModel()
-            {Message = "خطا در سرور", IsCompleted = true, Status = 200};
-        return new JsonResult(json);
+        var json = await _mediator.Send(new ForgetPasswordQuery() {Phonenumber = Phonenumber});
+        return json;
     }
     
     [HttpPost("code")]
     public async Task<JsonResult> VerifyCode([FromBody] string code)
     {
-        var otp = await OtpService.GetOtpAsync(code);
-        var user = await UserService.GetUserAsync(otp.userId);
-        if (otp.IsAuthentic)
-        {
-            user.UserStatus = UserStatus.Active;
-            otp.IsUsed = true;
-            var row = await Work.SaveChangesAsync();
-            if (row > 0)
-            {
-               var alarm = new VerifyAlarmModel() {Message = "کد حله شما میتوتنید رمز جدید انتخاب کنید", IsCompleted = true, Status = 200};
-                return new JsonResult(alarm);
-             
-            }
-            var alert= new VerifyAlarmModel() {Message = "خطا در سرور", IsCompleted = true, Status = 200};
-            return new JsonResult(alert);
-        }
-        var message = new VerifyAlarmModel() {Message = "کد وارد شده اعتبار ندارد", IsCompleted = true, Status = 200};
-        return new JsonResult(message);
+        var json = await _mediator.Send(new VerifyQuery() {code = code});
+        return json;
     }
+    
     [HttpPost("phonenumber,password")]
     public async Task<JsonResult> SetNewPassword([FromBody] SetPasswordModel? model)
     {
-        var user = await UserService.GetUserAsync(model.Phonenumber);
-        user.Password = model.Password;
-        var row = await Work.SaveChangesAsync();
-        if (row > 0)
-        {
-            var json = new VerifyAlarmModel()
-                {Message = "رمز عبور با موفیقیت تغییر کرد", IsCompleted = true, Status = 200};
-            return new JsonResult(json);
-        }
-        var Json = new VerifyAlarmModel()
-            {Message = "خطا در سرور", IsCompleted = true, Status = 200};
-        return new JsonResult(Json);
+        var json = await _mediator.Send(new NewPasswordQuery() {Model = model});
+        return json;
     }
+
+    [HttpGet("Phonenumber")]
+    public async Task<JsonResult> GetUser(string? Phonenumber)
+    {
+        var json = await _mediator.Send(new GetUserQueryByPhone() {Phonenumber = Phonenumber});
+        return json;
+    }
+    
+    
     //Jwt ...
+    [HttpPost]
     public async Task<JsonResult> Login()
     {
         return null;
     }
-    
+    [HttpPost]
     public async Task<JsonResult> Logout()
     {
         return null;
     }
+
+
+
+
 }

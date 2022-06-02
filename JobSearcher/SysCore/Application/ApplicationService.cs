@@ -8,6 +8,7 @@ using JobSearcher.CoreDomains.StorageDomains.Otp;
 using JobSearcher.CoreStorage.SqlContext;
 using JobSearcher.CoreStructure;
 using MapsterMapper;
+using MediatR;
 
 namespace JobSearcher.SysCore.Application;
 
@@ -21,5 +22,6 @@ public static class ApplicationService
         service.AddScoped<IAccessPermission,RoleService>();
         service.AddScoped<IOtpService, OtpService>();
         service.AddScoped<IMessageService,MessageService>();
+     
     }
 }
