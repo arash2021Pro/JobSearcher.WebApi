@@ -22,7 +22,11 @@ public class Core
     public string CurrentDate { get; set; }
     public DateTimeOffset OffsetCreation { get; set; }
     public bool IsDeleted { get; set; }
-    public string? OffsetModification { get; set; }
+
+    public string? OffsetModification;
+
+
+
     public string GetCurrentTime() => Calendar().GetHour(DateTime.Now) + ":" + Calendar().GetMinute(DateTime.Now) +
                                       ":" + Calendar().GetSecond(DateTime.Now);
     public string GetCurrentDate() => Calendar().GetYear(DateTime.Now) + "/" + Calendar().GetMonth(DateTime.Now) + "/" +

@@ -22,4 +22,9 @@ public class RoleService:IAccessPermission
     {
         return  _Roles.FirstOrDefault(r => r.Rolename == rolename).id;
     }
+
+    public async Task<Role?> SearchRoleByName(int roleId)
+    {
+        return await _Roles.FirstOrDefaultAsync(r => r.id == roleId);
+    }
 }

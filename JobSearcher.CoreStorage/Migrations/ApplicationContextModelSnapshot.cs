@@ -48,7 +48,6 @@ namespace JobSearcher.CoreStorage.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("OffsetModification")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -99,7 +98,6 @@ namespace JobSearcher.CoreStorage.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("OffsetModification")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("code")
@@ -142,7 +140,6 @@ namespace JobSearcher.CoreStorage.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("OffsetModification")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PermissionName")
@@ -177,7 +174,6 @@ namespace JobSearcher.CoreStorage.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("OffsetModification")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rolename")
@@ -211,7 +207,6 @@ namespace JobSearcher.CoreStorage.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("OffsetModification")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PermissionId")

@@ -1,9 +1,11 @@
-﻿using JobSearcher.CoreApplication.OtpApplication;
+﻿using JobSearcher.CoreApplication.ExpertisesApplication;
+using JobSearcher.CoreApplication.OtpApplication;
 using JobSearcher.CoreApplication.RoleApplication;
 using JobSearcher.CoreApplication.UserApplication;
 using JobSearcher.CoreDomains.ApiDomains;
 using JobSearcher.CoreDomains.ReposistoryPattern;
 using JobSearcher.CoreDomains.StorageDomains;
+using JobSearcher.CoreDomains.StorageDomains.Expertise;
 using JobSearcher.CoreDomains.StorageDomains.Otp;
 using JobSearcher.CoreStorage.SqlContext;
 using JobSearcher.CoreStructure;
@@ -22,6 +24,7 @@ public static class ApplicationService
         service.AddScoped<IAccessPermission,RoleService>();
         service.AddScoped<IOtpService, OtpService>();
         service.AddScoped<IMessageService,MessageService>();
-     
+        service.AddScoped<IUserExpertise, ExpertiseService>();
+
     }
 }

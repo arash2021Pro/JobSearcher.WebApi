@@ -1,4 +1,5 @@
 ﻿using JobSearcher.CoreDomains.BaseEntity;
+using JobSearcher.CoreDomains.StorageDomains.Expertise;
 using JobSearcher.CoreDomains.StorageDomains.Otp;
 using JobSearcher.CoreDomains.StorageDomains.SafetyPermissions;
 
@@ -13,4 +14,5 @@ public class User:Core
     public int RoleId { get; set; }
     public Role Role { get; set; }
     public ICollection<OTP>Otps { get; set; }
+    public ICollection<UserExpertise>UserExpertises { get; set; }
 }

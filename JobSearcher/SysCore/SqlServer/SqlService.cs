@@ -10,7 +10,7 @@ public static class SqlService
         var StorageConnection = configuration.GetConnectionString("DefaultConnection");
         service.AddDbContextPool<ApplicationContext>(option =>
         {
-            option.UseSqlServer(StorageConnection,x=>x.UseNodaTime());
+            option.UseSqlServer(StorageConnection, x => x.UseNodaTime()); 
             option.AddInterceptors();
             option.LogTo(Console.WriteLine);
         });

@@ -6,4 +6,6 @@ public interface IUserService
     Task<bool> IsContainsUserAsync(string Phonenumber);
     Task<User?> GetUserAsync(string phonenumber);
     Task<User?> GetUserAsync(int userId);
+    Task<User?> LoginAsync(string Phonenumber,string Password);
+  
 }

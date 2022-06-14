@@ -4,6 +4,7 @@ using JobSearcher.CoreDomains.ApiDomains;
 using JobSearcher.CoreDomains.BaseEntity;
 using JobSearcher.CoreDomains.ReposistoryPattern;
 using JobSearcher.CoreDomains.StorageDomains;
+using JobSearcher.CoreDomains.StorageDomains.Expertise;
 using JobSearcher.CoreDomains.StorageDomains.Otp;
 using JobSearcher.CoreDomains.StorageDomains.SafetyPermissions;
 using JobSearcher.CoreStorage.EntityConfigurations;
@@ -22,6 +23,7 @@ public class ApplicationContext:DbContext,IUnitOfWork
     public DbSet<Permission>Permissions { get; set; }
     public DbSet<RolePermission>RolePermissions { get; set; }
     public DbSet<OTP>Otps { get; set; }
+    public DbSet<UserExpertise>UserExpertises { get; set; }
 
         public override DbSet<TEntity> Set<TEntity>()
         {

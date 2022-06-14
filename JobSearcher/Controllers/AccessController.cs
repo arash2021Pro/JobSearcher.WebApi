@@ -3,6 +3,9 @@ using JobSearcher.ApiModels.Roles;
 using JobSearcher.CoreDomains.ReposistoryPattern;
 using JobSearcher.CoreDomains.StorageDomains;
 using JobSearcher.CoreDomains.StorageDomains.SafetyPermissions;
+using JobSearcher.CqrsOperations.AccessPermissions.RoleCreations;
+using JobSearcher.CqrsOperations.AccessPermissions.RoleEdition;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 namespace JobSearcher.Controllers;
 [ApiController]
@@ -11,24 +14,26 @@ public class AccessController
 {
     public IUnitOfWork Work;
     public IAccessPermission AccessPermission;
-    public AccessController(IUnitOfWork work, IAccessPermission accessPermission)
+    public ISender mediator;
+    public AccessController(IUnitOfWork work, IAccessPermission accessPermission, ISender mediator)
     {
         Work = work;
         AccessPermission = accessPermission;
+        this.mediator = mediator;
     }
     [HttpPost("Rolename")]
-    public async Task<Alarm> CreateRole( [FromBody] RoleCreationModel model)
+    public async Task<JsonResult> CreateRole( [FromBody] RoleCreationModel model)
     {
-        var result = await AccessPermission.IsRoleContains(model.Rolename);
-        if(result){return new Alarm(){Message = "نقش وجود داره",IsCompleted = false};}
-        var role = new Role() {Rolename = model.Rolename};
-        await AccessPermission.InsertRoleAsync(role);
-        var row = await Work.SaveChangesAsync();
-        if (row > 0)
-        {
-            return new Alarm() {IsCompleted = true, Message = "با موفقیت ثبت شد"};
-        }
-        return  new Alarm() {IsCompleted = false, Message = "خطا در پاسخگویی"};
+        var json = await mediator.Send(new CreateRoleQuery() {Model = model});
+        return json;
     }
+
+    [HttpPost("Rolename")]
+    public async Task<IActionResult> EditRole([FromBody] RoleEditModel model)
+    {
+        var result = await mediator.Send(new EditRoleQuery() {Model = model});
+        return result;
+    }
+
 
 }

@@ -7,4 +7,5 @@ public interface IAccessPermission
     Task InsertRoleAsync(Role? role);
     Task<bool> IsRoleContains(string rolename);
     public int SearchRoleIdAsync(string rolename);
+    public Task<Role?> SearchRoleByName(int roleId);
 }
